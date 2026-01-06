@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Neurodiversity Terms Glossary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <main class="shell">
+      <header class="header">
+        <section class="title-block" aria-label="Glossary header">
+          <div class="title-row">
+            <div class="title">
+              ND Terms Glossary
+            </div>
+            <a
+              class="suggestion-button"
+              href="https://forms.gle/PUUpFpz7DNdMSL5x7"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Have a Suggestion?
+            </a>
+          </div>
+        </section>
+      </header>
+
+      <section class="controls-block" aria-label="Search and tag filters">
+        <div class="controls">
+          <div class="search-row">
+            <div class="search-wrapper" role="search">
+              <input
+                id="search-input"
+                class="search-input"
+                type="search"
+                placeholder="Search by term or tag (e.g. “autism”, “social”, “cognitive”)"
+                autocomplete="off"
+                aria-label="Search terms by name or tag"
+              />
+              <svg class="search-icon" viewBox="0 0 20 20" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M8.5 3a5.5 5.5 0 0 1 4.356 8.876l3.634 3.634a1 1 0 0 1-1.414 1.414l-3.634-3.634A5.5 5.5 0 1 1 8.5 3zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <section class="tags-panel collapsed" aria-label="Tag filters">
+            <div class="tags-header">
+              <button
+                class="tags-toggle"
+                type="button"
+                id="tags-toggle"
+                aria-expanded="false"
+                aria-controls="tags-panel-content"
+              >
+                <div class="tags-title">
+                  <span>Filter by tags</span>
+                  <span class="tags-title-pill" id="tag-count-label">0 tags</span>
+                </div>
+              </button>
+              <div class="tags-actions">
+                <button class="text-button" type="button" id="clear-tags-button">
+                  <span>Clear</span>
+                </button>
+              </div>
+              <button
+                class="tags-chevron-button"
+                type="button"
+                id="tags-chevron-button"
+                aria-label="Toggle tag filters"
+                aria-controls="tags-panel-content"
+                aria-expanded="false"
+              >
+                <span class="tags-chevron" aria-hidden="true">▾</span>
+              </button>
+            </div>
+            <div class="tags-content" id="tags-panel-content">
+              <div class="tags-container" id="tag-container">
+                <!-- Tag chips rendered here -->
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="main" aria-label="Glossary results">
+        <div class="results-meta">
+          <div class="results-count" id="results-count"></div>
+          <div class="results-applied" id="applied-filters"></div>
+        </div>
+
+        <section class="glossary" id="glossary" aria-live="polite">
+          <div class="glossary-list" id="glossary-list">
+            <!-- Cards injected here -->
+          </div>
+          <div id="empty-state" class="empty-state" style="display: none;">
+            <div class="empty-title">No matches found.</div>
+            <div class="empty-tip">
+              Try a different keyword, remove some tag filters, or clear the search.
+              Use <code>Esc</code> to quickly clear the search field.
+            </div>
+          </div>
+          <div id="loader" style="display: none;">
+            <div class="loader"></div>
+            <div class="loader-text">Loading more terms…</div>
+          </div>
+          <div id="sentinel" class="sentinel" aria-hidden="true"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="./terms.js" defer></script>
+  <script src="./script.js" defer></script>
+</body>
+</html>
+
+
